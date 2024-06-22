@@ -64,6 +64,18 @@ public class UserController {
         }
     }
 
+    /*public ResponseEntity<String> registerUser(@RequestBody Users users) {
+        if (bucket.tryConsume(1)) {
+            try {
+                userService.createUser(users);
+                return ResponseEntity.ok(StaticVariables.SUCCESSFUL_REGISTRATION);
+            } catch (RuntimeException e) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+            }
+        } else {
+            throw new TooManyRequestsException(StaticVariables.TOOMANYREQUESTEXCEPTION);
+        }
+    }*/
 
     @GetMapping("/{id}")
     @Operation(summary = "Get user by ID")

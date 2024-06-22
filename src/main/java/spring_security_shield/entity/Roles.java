@@ -24,13 +24,14 @@ public class Roles implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_roles")
-    private String id;
+    private Long id;
 
     @Column(name = "name_role", nullable = true)
     private String name;
 
     @Column(name = "description", nullable = true)
     private String description;
+
 
 
     //@JsonIgnore

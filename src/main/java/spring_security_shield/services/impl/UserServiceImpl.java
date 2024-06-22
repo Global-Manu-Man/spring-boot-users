@@ -105,16 +105,16 @@ public class UserServiceImpl implements UserService {
     private void assignRole(Users users) {
         Roles role;
         if (users.getRoleId() == null) {
-            role = roleRepository.findById(String.valueOf(2L)).orElseThrow(() -> new RuntimeException(StaticVariables.DEFAULT_ROLE_NOT_FOUND));
+            role = roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(2L)))).orElseThrow(() -> new RuntimeException(StaticVariables.DEFAULT_ROLE_NOT_FOUND));
         } else {
             role = switch (users.getRoleId().intValue()) {
-                case 1 -> roleRepository.findById(String.valueOf(1L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 2 -> roleRepository.findById(String.valueOf(2L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 3 -> roleRepository.findById(String.valueOf(3L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 4 -> roleRepository.findById(String.valueOf(4L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 5 -> roleRepository.findById(String.valueOf(5L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 6 -> roleRepository.findById(String.valueOf(6L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
-                case 7 -> roleRepository.findById(String.valueOf(7L)).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 1 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(1L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 2 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(2L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 3 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(3L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 4 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(4L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 5 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(5L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 6 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(6L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
+                case 7 -> roleRepository.findById(String.valueOf(Long.valueOf(String.valueOf(7L)))).orElseThrow(() -> new RuntimeException(StaticVariables.INVALID_ROLE));
                 default -> throw new RuntimeException(StaticVariables.INVALID_ROLE);
             };
         }
